@@ -16,7 +16,7 @@ const App = () => {
         
         <button onClick={(e)=>{
           e.preventDefault()
-          const data = {task : document.querySelector('#task_input').value}
+          const data =document.querySelector('#task_input').value
           tasks.push(data);
           console.log(tasks)
         }}>add</button>
