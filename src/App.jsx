@@ -17,21 +17,30 @@ const App = () => {
         <button onClick={(e)=>{
           e.preventDefault()
           const data =document.querySelector('#task_input').value
-          tasks.push(data);
-          console.log(tasks)
+          if(data!=''){
+            tasks.push(data);
+            console.log(tasks)
+            let p = document.querySelector('#tasks')
+            p.textContent=tasks
+          }
         }}>add</button>
         <input type="text" id="delete" />
         <button onClick={(e)=>{
           e.preventDefault()
           let val=document.querySelector('#delete').value
-          let index = tasks.indexOf(val)
+          if(val!=''){
+            let index = tasks.indexOf(val)
 
           tasks.splice(index,1)
           console.log(tasks)
+          let p = document.querySelector('#tasks')
+          p.textContent=tasks
+          }
+          
         }} >delete</button>
 
 
-        <p id='tasks'>{tasks.values()}</p>
+        <p id='tasks'></p>
       </form>
     </div>
   )
